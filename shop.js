@@ -10,7 +10,7 @@
         }
     }
     
-    function isNumber(n){
+    function isNumber(n) {
         return !isNaN(parseFloat(n));
     }
     
@@ -36,7 +36,7 @@
         document.getElementsByClassName = function(clName) {
             var allElements = document.getElementsByTagName('*'),
                 matchedElements = [];
-            for (var i=0; i<allElements.length; i++) {
+            for (var i = 0; i < allElements.length; i++) {
                 var elementClassNames = allElements[i].className.split(' ');
                 if (elementClassNames.indexOf(clName) > -1) {
                     matchedElements.push(allElements[i]);
@@ -86,7 +86,7 @@
         saveItem: function(id,data){
             var key = id;
             try {
-                if (isNumber(key) && isObject(data)){
+                if (isNumber(key) && isObject(data)) {
                     localStorage.setItem(key,data);
                     cart.ids.push(id);
                 }
@@ -97,24 +97,24 @@
             }
         },
         
-        updateQty: function(id,val){
+        updateQty: function(id,val) {
             var newQty = localStorage[id]['qty'] + val;
             localStorage[id]['qty'] = newQty;
         },
         
-        removeItem: function(key){
+        removeItem: function(key) {
             localStorage.removeItem(key);
             delete cart.ids[key];
         },
 
-        newId: function(){
+        newId: function() {
             /* get the previous id + 1 and check if that does not exist anywhere */
             return cart.ids.length ? cart.ids[cart.ids.length-1]+1 : 1;
         },
         
         itemsCount: function() {
             var count = 0;
-            for (var i = 0; i < cart.ids.length; i++){
+            for (var i = 0; i < cart.ids.length; i++) {
                 count += parseInt(localStorage[i]['qty']);
             }
             return count;
@@ -122,7 +122,7 @@
         
         subTotal: function() {
             var total = 0;
-            for (var i=0;i<cart.ids.length;i++) {
+            for (var i = 0; i < cart.ids.length; i++) {
                 total += (parseInt(localStorage[i]['qty']) * parseInt(localStorage[i]['price']));
             }
             return total;
