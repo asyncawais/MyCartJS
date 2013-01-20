@@ -80,7 +80,7 @@
         },
         
         itemExists: function(id) {
-            cart.ids.indexOf(id) > -1 ? true : false;
+            return cart.ids.indexOf(id) > -1;
         },
         
         saveItem: function(id,data){
