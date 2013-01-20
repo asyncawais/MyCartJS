@@ -134,9 +134,14 @@
     }
     
     cart.views = {
+        
         'widget': function() {
-            return ''
+            return '<div id="myCartWidget"> \
+                    <div class="itemsCount" class="left"></div>  \
+                    <div class="subTotal"></div> \
+                <div>'
         },
+        
         'main': function(){
             
         }
