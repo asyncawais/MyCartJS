@@ -1,4 +1,4 @@
-(function(){
+(function() {
     
     /* General Helper Functions */
     
