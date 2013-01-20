@@ -72,7 +72,7 @@
     var cart = {
         
         settings: {
-            'cartColumns':['Title','Description','Price']
+            'cartColumns':['Title','Description','Qty','Price']
         },
         
         ids: [],
@@ -146,38 +146,25 @@
                     <div>'
         },
         
-        'createTableHeader': function(columns) {
-            return (isArray(columns) && columns.length) ? '<tr>' + columns.join('</th><th>') + '</tr>' : '';
-        },
+ 
         
-        'main': function(){
+        'tableView': function(){
             
-            var itemsData = localStorage,
-                tableHeaderStr = '';
-            
-            for (var i = 0; i < cart.ids.length; i++) {
-                
-                itemsData[i]
-                
-            }
-            
-            
-            
-            
-            
-            /* In Progress */
-            
-            var tableRows = '';
+            var headerStr = (isArray(columns) && columns.length) ? '<tr class="header">' + columns.join('</th><th>') + '</tr>' : '',
+                itemsData = localStorage,
+                tableRows = '';
             
             for (var i = 0; i < cart.ids.length; i++) {
-                tableRows += '<tr>';
+                tableRows += '<tr id="itemId-' + i + '">';
                 var rowData =  itemsData[i];
                 for (innkerKey in rowData) {
                     tableRows += ('<td>'+rowData[innkerKey]+'</td>');
                 } 
                 tableRows += '</tr>';
-                
             }
+            
+            return '<table>' + headerStr + tableRows + '</table>'
+            
         }
     } 
 })();
