@@ -98,8 +98,8 @@
         },
         
         updateQty: function(id,val){
-            var qty = localStorage[id]['qty'] + val;
-            localStorage[id]['qty'] = qty;
+            var newQty = localStorage[id]['qty'] + val;
+            localStorage[id]['qty'] = newQty;
         },
         
         removeItem: function(key){
