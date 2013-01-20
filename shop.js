@@ -146,8 +146,6 @@
                     <div>'
         },
         
- 
-        
         'tableView': function(){
             
             var headerStr = (isArray(columns) && columns.length) ? '<tr class="header">' + columns.join('</th><th>') + '</tr>' : '',
