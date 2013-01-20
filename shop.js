@@ -144,6 +144,19 @@
         
         'main': function(){
             
+            /* In Progress */
+            
+            var tableRows = '';
+            
+            for (key in db) {
+                tableRows += '<tr>';
+                var rowData =  db[key];
+                for (innkerKey in rowData) {
+                    tableRows += ('<td>'+rowData[innkerKey]+'</td>');
+                } 
+                tableRows += '</tr>';
+                
+            }
         }
     } 
 })();
