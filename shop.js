@@ -10,12 +10,12 @@
         }
     }
     
-    function isNumber(){
-        return true;
+    function isNumber(n){
+        return !isNaN(parseFloat(n));
     }
     
-    function isString() {
-        return true;
+    function isString(s) {
+        return typeof s === 'string';
     }
     
     function isArray() {
@@ -86,7 +86,7 @@
         saveItem: function(id,data){
             var key = id;
             try {
-                if (!isNaN(key) && isObject(data)){
+                if (isNumber(key) && isObject(data)){
                     localStorage.setItem(key,data);
                     cart.ids.push(id);
                 }
