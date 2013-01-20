@@ -126,25 +126,19 @@
                 total += (parseInt(localStorage[i]['qty']) * parseInt(localStorage[i]['price']));
             }
             return total;
+        },
+        
+        grandTotal: function() {
+            return cart.subTotal();
         }
     }
     
     cart.views = {
         'widget': function() {
-            
-            
-            
-            
             return ''
         },
         'main': function(){
             
         }
-    }
-    
-    
-    
-    
-    
-    
+    } 
 })();
