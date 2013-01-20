@@ -4,7 +4,7 @@
     
     function localStorageExists() {
         try {
-            'localStorage' in window && window['localStorage'] !== null;  
+            return 'localStorage' in window && window['localStorage'] !== null; 
         } catch(e) {
             return false;
         }
@@ -18,12 +18,12 @@
         return typeof s === 'string';
     }
     
-    function isArray() {
-        return true;
+    function isArray(arr) {
+        return Object.prototype.toString.call(arr) === '[object Array]';
     }
     
     function isObject(obj) {
-        return Object.prototype.toString.call(obj) === '[object Object]' ? true : false;
+        return Object.prototype.toString.call(obj) === '[object Object]';
     }
     
     /* Exit if localStorage does not exist */
@@ -142,15 +142,32 @@
                     <div>'
         },
         
+        'createTableHeader': function(columns) {
+            return (isArray(columns) && columns.length) ? '<tr>' + columns.join('</th><th>') + '</tr>' : '';
+        },
+        
         'main': function(){
+            
+            var itemsData = localStorage,
+                tableHeaderStr = '';
+            
+            for (var i = 0; i < cart.ids.length; i++) {
+                
+                itemsData[i]
+                
+            }
+            
+            
+            
+            
             
             /* In Progress */
             
             var tableRows = '';
             
-            for (key in db) {
+            for (var i = 0; i < cart.ids.length; i++) {
                 tableRows += '<tr>';
-                var rowData =  db[key];
+                var rowData =  itemsData[i];
                 for (innkerKey in rowData) {
                     tableRows += ('<td>'+rowData[innkerKey]+'</td>');
                 } 
