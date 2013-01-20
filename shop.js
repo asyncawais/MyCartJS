@@ -149,8 +149,8 @@
         
         'widget': function() {
             return '<div id="myCartWidget"> \
-                        <div class="itemsCount" class="left"></div> \
-                        <div class="subTotal"></div> \
+                        <div class="itemsCount" class="left">' + cart.itemsCount() + '</div> \
+                        <div class="subTotal">' + cart.subTotal() + '</div> \
                     <div>'
         },
         
