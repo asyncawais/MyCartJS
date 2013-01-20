@@ -102,8 +102,10 @@
         },
         
         updateQty: function(id,val) {
-            var newQty = localStorage[id]['qty'] + val;
-            localStorage[id]['qty'] = newQty;
+            if (isNumber(localStorage[id]['qty']) && isNumber(val)) {
+                var newQty = parseInt(localStorage[id]['qty']) + parseInt(val);
+                localStorage[id]['qty'] = newQty;
+            }
         },
         
         removeItem: function(key) {
