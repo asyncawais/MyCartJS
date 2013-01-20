@@ -1,7 +1,5 @@
 /*
- 
     Copyright (c) 2012 - 2013 Awais Muzaffar. Dual licensed under the MIT and GPL licenses.
-
 */
 
 (function() {
