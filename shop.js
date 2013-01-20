@@ -157,8 +157,8 @@
             for (var i = 0; i < cart.ids.length; i++) {
                 tableRows += '<tr id="itemId-' + cart.ids[i] + '">';
                 var rowData =  itemsData[cart.ids[i]];
-                for (innkerKey in rowData) {
-                    tableRows += ('<td>'+rowData[innkerKey]+'</td>');
+                for (innerKey in rowData) {
+                    tableRows += ('<td>'+rowData[innerKey]+'</td>');
                 } 
                 tableRows += '</tr>';
             }
