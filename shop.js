@@ -71,6 +71,10 @@
     
     var cart = {
         
+        settings: {
+            'cartColumns':['Title','Description','Price']
+        },
+        
         ids: [],
         
         addItem: function(data) {
