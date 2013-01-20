@@ -3,7 +3,11 @@
     /* General Helper Functions */
     
     function localStorageExists() {
-        return true; 
+        try {
+            'localStorage' in window && window['localStorage'] !== null;  
+        } catch(e) {
+            return false;
+        }
     }
     
     function isNumber(){
